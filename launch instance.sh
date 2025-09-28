@@ -6,3 +6,7 @@ echo "$instanceid"
 publicip=$(aws ec2 describe-instances --instance-ids $instanceid --query 'Reservations[0].Instances[0].PublicIpAddress' --output text)
 
 echo "publicip is: $publicip"
+
+publicip=$(aws ec2 describe-instances --instance-ids $instanceid --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
+
+echo "publicip is: $privateip"
