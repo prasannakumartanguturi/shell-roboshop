@@ -16,7 +16,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 SCRIPT_DIR=$PWD
 
 sudo mkdir -p $LOGS_FOLDER
-echo "Script started executed at: $(date)" | tee -a $LOG_FILE
+echo "Script started executed at: $(date)" 
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
@@ -25,10 +25,10 @@ fi
 
 VALIDATE(){ # functions receive inputs through args just like shell script args
     if [ $1 -ne 0 ]; then
-        echo -e " $2 ... $R FAILURE $N" | tee -a $LOG_FILE
+        echo -e " $2 ... $R FAILURE $N" 
         exit 1
     else
-        echo -e " $2 ... $G SUCCESS $N" | tee -a $LOG_FILE
+        echo -e " $2 ... $G SUCCESS $N" 
     fi
 }
 
