@@ -18,7 +18,7 @@ SCRIPT_DIR=$PWD
 MONGODB_HOST=mongodb.prasannadso.fun
 
 
-sudo mkdir -p $LOGS_FOLDER /app
+sudo mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
@@ -49,6 +49,7 @@ else
     echo -e "User already exist ... $Y SKIPPING $N"
 fi
 
+sudo mkdir -p /app
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 VALIDATE $? "downloading catalogue code zip file from s3"
 
