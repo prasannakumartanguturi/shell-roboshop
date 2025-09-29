@@ -18,7 +18,7 @@ SCRIPT_DIR=$PWD
 MONGODB_HOST=mongodb.prasannadso.fun
 
 
-mkdir -p $LOGS_FOLDER /app
+sudo mkdir -p $LOGS_FOLDER /app
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
