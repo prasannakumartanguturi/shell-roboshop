@@ -55,7 +55,7 @@ VALIDATE $? "downloading catalogue code zip file from s3"
 
 cd /app 
 VALIDATE $? " changing to app directory"
-
+rm -rf /app/*
 unzip /tmp/catalogue.zip
 
 cd /app 
