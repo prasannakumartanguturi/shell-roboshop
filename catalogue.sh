@@ -69,7 +69,7 @@ systemctl start catalogue
 echo -e "Catalogue application setup ... $G SUCCESS $N"
 
 
-cp $PWD/mongo.repo /etc/yum.repos.d/mongo.repo
+cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-mongosh -y
 # check inn google , shell script to check db,s are loaded or not.
