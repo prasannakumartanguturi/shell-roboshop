@@ -54,5 +54,5 @@ VALIDATE $? "unzip roboshop html content"
 cp $SCRIPT_DIR/nginx.conf /etc/nginx/nginx.conf
 
 
-systemctl re"start nginx 
+systemctl restart nginx 
 VALIDATE $? "restrting nginx service"
