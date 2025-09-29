@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGS_FOLDER="/var/log/roboshop"
+LOGS_FOLDER="/var/log/mongodb"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
@@ -42,7 +42,7 @@ VALIDATE $? "enable mongodb"
 systemctl start mongod 
 VALIDATE $? "start mongod"
 
-sed -i '/s/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 VALIDATE $? "allowing remote connection"
 
 systemctl restart mongod
