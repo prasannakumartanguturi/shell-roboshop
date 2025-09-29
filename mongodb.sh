@@ -35,7 +35,7 @@ VALIDATE $? "Adding Mongo repo"
 
 dnf list installed mongodb-org 
     if [ $? != 0 ]; then 
-        dnf install mongodb-org -y 
+        sudo dnf install mongodb-org  -y
         VALIDATE $? "mongodb"
     else
         echo "mongo db already installled"
