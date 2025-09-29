@@ -42,11 +42,13 @@ dnf install nodejs -y
 VALIDATE $? "installing nodejs"
 
 id roboshop
-if [ $? != 0 ]; then 
+if [ $? -ne 0 ]; then 
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 else 
     echo "user already exists"
 fi
+
+
 
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
 VALIDATE $? "downloading catalogue code zip file from s3"
